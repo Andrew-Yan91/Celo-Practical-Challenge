@@ -4,9 +4,94 @@
   <meta charset="utf-8">
   <title>MyApp</title>
   <base href="/">
-
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+
+$(document).ready(function(){
+  $("#offline_mode").click(function(){
+    document.getElementsByClassName("smallpicture1").src="1.jpg";
+  });
+});
+    $.ajax({
+   method: "get",
+   url: "https://randomuser.me/api",
+   datatype: "json",
+   data: { results: 6 },
+   success: function(r) {
+      $(".firstname1").text(r.results[0].name.first);
+      $(".lastname1").text(r.results[0].name.last);
+      $(".samllpicture1").attr('src', r.results[0].picture.thumbnail);
+      $(".bigpicture1").attr('src', r.results[0].picture.large);
+      $(".phone1").text(r.results[0].phone);
+      $(".city1").text(r.results[0].location.city);
+      $(".state1").text(r.results[0].location.state);
+      $(".email1").text(r.results[0].email);
+      $(".dob1").text(r.results[0].dob.date);
+      $(".age1").text(r.results[0].dob.age);
+      $(".firstname2").text(r.results[1].name.first);
+      $(".lastname2").text(r.results[1].name.last);
+      $(".samllpicture2").attr('src', r.results[1].picture.thumbnail);
+      $(".bigpicture2").attr('src', r.results[1].picture.large);
+      $(".phone2").text(r.results[1].phone);
+      $(".city2").text(r.results[1].location.city);
+      $(".state2").text(r.results[1].location.state);
+      $(".email2").text(r.results[1].email);
+      $(".dob2").text(r.results[1].dob.date);
+      $(".age2").text(r.results[1].dob.age);
+      $(".firstname3").text(r.results[2].name.first);
+      $(".lastname3").text(r.results[2].name.last);
+      $(".samllpicture3").attr('src', r.results[2].picture.thumbnail);
+      $(".bigpicture3").attr('src', r.results[2].picture.large);
+      $(".phone3").text(r.results[2].phone);
+      $(".city3").text(r.results[2].location.city);
+      $(".state3").text(r.results[2].location.state);
+      $(".email3").text(r.results[2].email);
+      $(".dob3").text(r.results[2].dob.date);
+      $(".age3").text(r.results[2].dob.age);
+      $(".firstname4").text(r.results[3].name.first);
+      $(".lastname4").text(r.results[3].name.last);
+      $(".samllpicture4").attr('src', r.results[3].picture.thumbnail);
+      $(".bigpicture4").attr('src', r.results[3].picture.large);
+      $(".phone4").text(r.results[3].phone);
+      $(".city4").text(r.results[3].location.city);
+      $(".state4").text(r.results[3].location.state);
+      $(".email4").text(r.results[3].email);
+      $(".dob4").text(r.results[3].dob.date);
+      $(".age4").text(r.results[3].dob.age);
+      $(".firstname5").text(r.results[4].name.first);
+      $(".lastname5").text(r.results[4].name.last);
+      $(".samllpicture5").attr('src', r.results[4].picture.thumbnail);
+      $(".bigpicture5").attr('src', r.results[4].picture.large);
+      $(".phone5").text(r.results[4].phone);
+      $(".city5").text(r.results[4].location.city);
+      $(".state5").text(r.results[4].location.state);
+      $(".email5").text(r.results[4].email);
+      $(".dob5").text(r.results[4].dob.date);
+      $(".age5").text(r.results[4].dob.age);
+      $(".firstname6").text(r.results[5].name.first);
+      $(".lastname6").text(r.results[5].name.last);
+      $(".samllpicture6").attr('src', r.results[5].picture.thumbnail);
+      $(".bigpicture6").attr('src', r.results[5].picture.large);
+      $(".phone6").text(r.results[5].phone);
+      $(".city6").text(r.results[5].location.city);
+      $(".state6").text(r.results[5].location.state);
+      $(".email6").text(r.results[5].email);
+      $(".dob6").text(r.results[5].dob.date);
+      $(".age6").text(r.results[5].dob.age);
+   },
+   error: function() {
+      alert("error");
+   },
+   complete: function(){
+      $("#loadingtext").fadeOut();
+   }
+});
+    </script>
 </head>
 <body>
   <app-root></app-root>
